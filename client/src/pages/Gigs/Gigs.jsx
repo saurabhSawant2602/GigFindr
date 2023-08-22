@@ -8,16 +8,14 @@ import "./Gigs.scss";
 const Gigs = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [sortBy, setSortBy] = useState("sales");
-  const [category, setCategory] = useState(".");
+  const { search } = useLocation();
+  const [category, setCategory] = useState(`Gig Not Found`);
   const minRef = useRef();
   const maxRef = useRef();
-  const { search } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  console.log(search);
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["gigs"],
@@ -25,10 +23,8 @@ const Gigs = () => {
       axiosFetch
         .get(
           `/gigs?${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`
-          // `/gigs?${search}`
         )
         .then(({ data }) => {
-          console.log(data);
           setCategory(data[0].category);
           return data;
         })
@@ -99,7 +95,8 @@ const Gigs = () => {
               <Loader size={45} />{" "}
             </div>
           ) : error ? (
-            "Something went wrong!"
+            // "Something went wrong!"
+            "Gigs Not Found !!"
           ) : (
             data.map((gig) => <GigCard key={gig._id} data={gig} />)
           )}

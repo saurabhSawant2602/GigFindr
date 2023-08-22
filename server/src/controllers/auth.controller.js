@@ -7,7 +7,6 @@ const { JWT_SECRET, NODE_ENV } = process.env;
 const saltRounds = 10;
 
 const authRegister = async (request, response) => {
-  console.log(`hiii`);
   const { username, email, phone, password, image, isSeller, description } =
     request.body;
 

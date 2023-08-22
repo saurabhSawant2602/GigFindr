@@ -207,7 +207,7 @@ const Gig = () => {
             </div>
             <Reviews gigID={_id} />
           </div>
-          <div className="right">
+          <div className="right" style={{ position: "sticky" }}>
             <div className="price">
               <h3>{data?.shortTitle}</h3>
               <h2>
