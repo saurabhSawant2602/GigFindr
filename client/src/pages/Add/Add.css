@@ -1,0 +1,88 @@
+.add {
+  display: flex;
+  justify-content: center;
+}
+.add .container {
+  width: 85%;
+  margin: auto;
+  padding: 50px 0;
+}
+.add .container h1 {
+  color: gray;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.add .container .sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+.add .container .sections .left, .add .container .sections .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+.add .container .sections .left label, .add .container .sections .right label {
+  color: gray;
+  font-size: 18px;
+}
+.add .container .sections .left input, .add .container .sections .left select, .add .container .sections .left textarea, .add .container .sections .right input, .add .container .sections .right select, .add .container .sections .right textarea {
+  padding: 12px;
+}
+.add .container .sections .left .images, .add .container .sections .right .images {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.add .container .sections .left .images .imagesInput, .add .container .sections .right .images .imagesInput {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.add .container .sections .left .images button:disabled, .add .container .sections .right .images button:disabled {
+  color: white;
+  background-color: gray;
+  cursor: not-allowed;
+}
+.add .container .sections .left button, .add .container .sections .right button {
+  border: none;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: var(--green-color);
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.add .container .sections .right .add {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.add .container .sections .right .add input {
+  width: 80%;
+}
+.add .container .sections .right .addedFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.add .container .sections .right .addedFeatures button {
+  height: 30px;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: transparent;
+  color: gray;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #ccc;
+}
+@media screen and (max-width: 900px) {
+  .add .container .sections {
+    flex-direction: column-reverse;
+  }
+}/*# sourceMappingURL=Add.css.map */

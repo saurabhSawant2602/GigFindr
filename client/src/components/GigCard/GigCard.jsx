@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import './GigCard.scss';
+import { Link } from "react-router-dom";
+import "./GigCard.css";
 
 const GigCard = (props) => {
-    const { data } = props;
+  const { data } = props;
 
   return (
     <Link to={`/gig/${data._id}`} className="link">
@@ -10,14 +10,14 @@ const GigCard = (props) => {
         <img src={data.cover} alt="" />
         <div className="info">
           <div className="user">
-            <img src={data.userID.image || './media/noavatar.png'} alt="" />
+            <img src={data.userID.image || "./media/noavatar.png"} alt="" />
             <span>{data.userID.username}</span>
           </div>
           <p>{data.title}</p>
           <div className="star">
             <img src="./media/star.png" alt="" />
             <span>{Math.round(data.totalStars / data.starNumber) || 0}</span>
-            <span className='totalStars'>({data.starNumber})</span>
+            <span className="totalStars">({data.starNumber})</span>
           </div>
         </div>
         <hr />
@@ -26,17 +26,17 @@ const GigCard = (props) => {
           <div className="price">
             <span>STARTING AT</span>
             <h2>
-              {data.price.toLocaleString('en-IN', {
+              {data.price.toLocaleString("en-IN", {
                 maximumFractionDigits: 0,
-                style: 'currency',
-                currency: 'INR',
+                style: "currency",
+                currency: "INR",
               })}
             </h2>
           </div>
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default GigCard
+export default GigCard;

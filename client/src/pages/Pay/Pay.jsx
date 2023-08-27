@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Elements } from "@stripe/react-stripe-js";
 import { axiosFetch } from "../../utils";
 import { CheckoutForm } from "../../components";
-import "./Pay.scss";
+import "./Pay.css";
 
 const stripePromise = loadStripe(
   "pk_test_51NggwySH223NScjo02ce1MtFZJlx08pp2LRIRgKKKuhazZfFXEK5kE0YQDsi35h4HDq7ropd4N2tPFxnT4G5pzp800sNBxrfsd"

@@ -19,7 +19,8 @@ import {
   Success,
   NotFound,
 } from "./pages";
-import "./App.scss";
+import "./App.css";
+import Bot from "./pages/Bot/Bot";
 
 const paths = [
   { path: "/", element: <Home /> },
@@ -93,6 +94,7 @@ function App() {
     return (
       <QueryClientProvider client={queryClient}>
         <Navbar />
+        <Bot />
         <Outlet />
         <Footer />
       </QueryClientProvider>

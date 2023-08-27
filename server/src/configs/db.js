@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
-mongoose.set('strictQuery', true);
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", true);
+const { MONGO_ATLAS } = process.env;
 
 const connect = () => {
-    return mongoose.connect(`mongodb://127.0.0.1:27017`);
+  return mongoose.connect(MONGO_ATLAS);
 };
 
 module.exports = connect;

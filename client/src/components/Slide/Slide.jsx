@@ -1,10 +1,10 @@
-import Slider from 'react-slick';
-import { PrevArrow, NextArrow } from '../../components';
+import Slider from "react-slick";
+import { PrevArrow, NextArrow } from "../../components";
 
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import './Slide.scss';
+import "./Slide.css";
 
 const Slide = (props) => {
   const { children, slidesToShow } = props;
@@ -22,32 +22,30 @@ const Slide = (props) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-        }
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-        }
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className='slide-Container'>
-      <Slider {...settings}>
-        {children}
-      </Slider>
+    <div className="slide-Container">
+      <Slider {...settings}>{children}</Slider>
     </div>
-  )
-}
+  );
+};
 
 export default Slide;

@@ -2,8 +2,8 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { axiosFetch, generateImageURL } from "../../../utils";
-import "./Register.scss";
-
+import "./Register.css";
+import emailjs from "@emailjs/browser";
 const Register = () => {
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
@@ -20,6 +20,34 @@ const Register = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const sendAutoReply = (username, password, toEmail) => {
+    emailjs
+      .send(
+        "service_50snyqb",
+        "template_21demwm",
+        {
+          to_email: toEmail,
+          username: username,
+          password: password,
+        },
+        "FpaG_7NuJG1_I6co_"
+      )
+      .then((result) => {
+        console.log(result.text);
+        if (result.status === 200) {
+          console.log("Email sent successfully", result);
+        } else {
+          console.log("Email sending failed", result);
+        }
+
+        // Optionally show a success toast or message for the auto-reply
+      })
+      .catch((error) => {
+        console.error(error.text);
+        console.log("email sent failed");
+      });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -43,8 +71,10 @@ const Register = () => {
         image: url,
       });
       console.log(url);
+      sendAutoReply(formInput.username, formInput.password, formInput.email);
       toast.success("Registration successful!");
       setLoading(false);
+
       navigate("/login");
     } catch ({ response }) {
       console.log(response);

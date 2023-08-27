@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Featured.scss";
+import "./Featured.css";
 
 const Featured = () => {
   const [search, setSearch] = useState("");

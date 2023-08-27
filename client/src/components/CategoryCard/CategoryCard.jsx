@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom';
-import './CategoryCard.scss';
+import { Link } from "react-router-dom";
+import "./CategoryCard.css";
 
 const Card = (props) => {
   const { data } = props;
 
   return (
     <Link to={`/gigs?category=${data.slug}`}>
-        <div className='cardContainer'>
-            <img src={data.img} alt={data.title} />
-            <span className='desc'>{data.desc}</span>
-            <span className='title'>{data.title}</span>
-        </div>
+      <div className="cardContainer">
+        <img src={data.img} alt={data.title} />
+        <span className="desc">{data.desc}</span>
+        <span className="title">{data.title}</span>
+      </div>
     </Link>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

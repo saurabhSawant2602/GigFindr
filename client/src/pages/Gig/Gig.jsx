@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { axiosFetch, getCountryFlag } from "../../utils";
 import { Link, useParams } from "react-router-dom";
 import { Loader, NextArrow, PrevArrow, Reviews } from "../../components";
-import "./Gig.scss";
+import "./Gig.css";
 
 import {
   CarouselProvider,

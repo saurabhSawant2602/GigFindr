@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { axiosFetch } from "../../utils";
 import { useRecoilValue } from "recoil";
 import { userState } from "../../atoms";
-import { Loader } from '../../components';
-import "./Orders.scss";
+import { Loader } from "../../components";
+import "./Orders.css";
 
 const Orders = () => {
   const navigate = useNavigate();
@@ -55,7 +55,10 @@ const Orders = () => {
   return (
     <div className="orders">
       {isLoading ? (
-        <div className="loader"> <Loader /> </div>
+        <div className="loader">
+          {" "}
+          <Loader />{" "}
+        </div>
       ) : error ? (
         "Something went wrong!"
       ) : (

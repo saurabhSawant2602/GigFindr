@@ -3,7 +3,7 @@ import { GigCard, Loader } from "../../components";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
 import { axiosFetch } from "../../utils";
-import "./Gigs.scss";
+import "./Gigs.css";
 
 const Gigs = () => {
   const [openMenu, setOpenMenu] = useState(false);

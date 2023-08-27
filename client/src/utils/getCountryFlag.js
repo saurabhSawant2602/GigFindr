@@ -1,13 +1,14 @@
 import countriesFlags from "./countriesFlags";
 
+//
 const getCountryFlag = (data) => {
-    for(let country in countriesFlags) {
-        if(country === data || countriesFlags[country].alias === data) {
-            return countriesFlags[country];
-        }
+  for (let country in countriesFlags) {
+    if (country === data || countriesFlags[country].alias === data) {
+      return countriesFlags[country];
     }
+  }
 
-    return {};
-}
+  return {};
+};
 
 export default getCountryFlag;

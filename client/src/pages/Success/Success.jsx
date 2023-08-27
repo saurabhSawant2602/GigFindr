@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { axiosFetch } from "../../utils";
 import { useRecoilValue } from "recoil";
 import { userState } from "../../atoms";
-import "./Success.scss";
+import "./Success.css";
 
 const Success = () => {
   const { search } = useLocation();

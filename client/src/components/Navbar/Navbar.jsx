@@ -6,7 +6,7 @@ import { axiosFetch } from "../../utils";
 import { useRecoilState } from "recoil";
 import { userState } from "../../atoms";
 import { Loader } from "..";
-import "./Navbar.scss";
+import "./Navbar.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,14 +23,12 @@ const Navbar = () => {
     (async () => {
       setIsLoading(true);
       try {
-        const { data } = await axiosFetch.get('/auth/me');
+        const { data } = await axiosFetch.get("/auth/me");
         setUser(data.user);
-      }
-      catch({ response }) {
-        localStorage.removeItem('user');
+      } catch ({ response }) {
+        localStorage.removeItem("user");
         console.log(response.data.message);
-      }
-      finally {
+      } finally {
         setIsLoading(false);
       }
     })();
@@ -89,7 +87,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await axiosFetch.post("/auth/logout");
-      localStorage.removeItem('user');
+      localStorage.removeItem("user");
       setUser(null);
       navigate("/");
     } catch ({ response }) {
@@ -102,7 +100,7 @@ const Navbar = () => {
       <div className="container">
         <div className="logo">
           <Link to="/" className="link">
-            <span className="text">fiverr</span>
+            <span className="text">GigFindr</span>
           </Link>
           <span className="dot">.</span>
         </div>
