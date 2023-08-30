@@ -5,13 +5,17 @@
   padding: 100px 0;
 }
 .home .features.dark {
-  background-color: #0D084D;
+  background-color: #0d084d;
 }
-.home .features.dark h1, .home .features.dark h2, .home .features.dark p, .home .features.dark h6 {
+.home .features.dark h1,
+.home .features.dark h2,
+.home .features.dark p,
+.home .features.dark h6 {
   color: #fff !important;
   font-weight: 400 !important;
 }
-.home .features.dark h1, .home .features.dark h2 {
+.home .features.dark h1,
+.home .features.dark h2 {
   font-weight: 500 !important;
 }
 .home .features.dark h1 > span {
@@ -59,7 +63,7 @@
 .home .features .item p {
   font-size: 18px;
   font-weight: 500;
-  color: #62646A;
+  color: #62646a;
   line-height: 26px;
 }
 .home .features .item .title {
@@ -83,4 +87,4 @@
   .home .features .item video {
     width: 100%;
   }
-}/*# sourceMappingURL=Home.css.map */
+}

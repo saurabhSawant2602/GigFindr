@@ -11,8 +11,27 @@
   gap: 120px;
 }
 .register form h1 {
-  color: gray;
-  margin-bottom: 20px;
+  color: rgb(70, 65, 65);
+  font-weight: 600;
+  margin-bottom: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+.register form .left #profilePic {
+  display: none;
+  border: none;
+}
+.register form .left .imagesInput {
+  margin: 18px 0px;
+  border: 1px solid #5f63ff;
+  color: #5f63ff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 60%;
+  text-align: center;
+}
+.register form .left .imagesInput:hover {
+  background-color: #5f63ff;
+  color: #fff;
 }
 .register form .left,
 .register form .right {
@@ -24,31 +43,72 @@
 }
 .register form .left label,
 .register form .right label {
-  color: gray;
+  color: #010000;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
 }
 .register form .left input,
 .register form .left textarea,
 .register form .right input,
 .register form .right textarea {
-  padding: 12px;
-  border: 1px solid rgb(216, 214, 214);
+  min-height: 30px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(82, 66, 66);
+  padding: 12px 26px;
+}
+.register form .left input:focus,
+.register form .left textarea:focus,
+.register form .right input:focus,
+.register form .right textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(92, 110, 231, 0.7);
+}
+.register form .left input:focus::-moz-placeholder,
+.register form .left textarea:focus::-moz-placeholder,
+.register form .right input:focus::-moz-placeholder,
+.register form .right textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+.register form .left input:focus::placeholder,
+.register form .left textarea:focus::placeholder,
+.register form .right input:focus::placeholder,
+.register form .right textarea:focus::placeholder {
+  color: transparent;
 }
 .register form .left button,
 .register form .right button {
   border: none;
+  border-radius: 50px;
   padding: 20px;
   color: white;
   font-weight: 500;
   font-size: 18px;
-  background-color: #1dbf73;
+  font-family: "Open Sans", sans-serif;
+  background-color: #544cf9;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform;
+}
+.register form .left button:hover,
+.register form .left button:focus,
+.register form .left button:active,
+.register form .right button:hover,
+.register form .right button:focus,
+.register form .right button:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
 }
 .register form .left button:disabled,
 .register form .right button:disabled {
-  background-color: gray;
+  background-color: rgb(151, 153, 198);
   color: #fff;
-  cursor: disabled;
+  cursor: not-allowed;
 }
 .register form .left .toggle,
 .register form .right .toggle {
@@ -108,6 +168,6 @@
 }
 @media screen and (max-width: 900px) {
   .register form {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
-}/*# sourceMappingURL=Register.css.map */
+}

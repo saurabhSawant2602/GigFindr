@@ -13,14 +13,25 @@
   --gray-color: #74767e;
 }
 
-.home .features {
-  background-color: #f1fdf7;
-  display: flex;
-  justify-content: center;
-  padding: 100px 0;
-  display: none;
-}
-
 .abc {
   display: none;
+}
+h1 {
+  border-bottom: none;
+}
+a:hover {
+  text-decoration: none;
+}
+button a:hover {
+  text-decoration: none;
+  color: white;
+}
+button:hover {
+  color: black;
+}
+button {
+  background: #403bb1;
+}
+button:hover {
+  background: transparent;
 }

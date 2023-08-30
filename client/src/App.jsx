@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { RecoilRoot } from "recoil";
 import { Navbar, PrivateRoute } from "./components";
+import { Route } from "react-router-dom";
 import {
   Home,
   Footer,
@@ -19,8 +20,11 @@ import {
   Success,
   NotFound,
 } from "./pages";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import ContactUs from "./pages/ContactUs/ContactUs";
 import "./App.css";
 import Bot from "./pages/Bot/Bot";
+import Verified from "./pages/Verified/Verfied";
 
 const paths = [
   { path: "/", element: <Home /> },
@@ -28,6 +32,7 @@ const paths = [
   { path: "/gigs", element: <Gigs /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
+  { path: "/verified/:token", element: <Verified /> },
   {
     path: "/orders",
     element: (
@@ -83,6 +88,14 @@ const paths = [
         <Success />
       </PrivateRoute>
     ),
+  },
+  {
+    path: "/AboutUs",
+    element: <AboutUs />,
+  },
+  {
+    path: "/ContactUs",
+    element: <ContactUs />,
   },
   { path: "*", element: <NotFound /> },
 ];

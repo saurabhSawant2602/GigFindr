@@ -57,7 +57,9 @@ app.get("/ip", (request, response) => {
 app.listen(PORT, async () => {
   try {
     await connect();
+
     console.log(`Listening at http://localhost:${PORT}`);
+    console.log("connected to MongoDB");
   } catch ({ message }) {
     console.log(message);
   }

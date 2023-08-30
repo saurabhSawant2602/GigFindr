@@ -1,16 +1,18 @@
 .footer {
   color: #fff;
-  background-color: #0d2857;
+  /* background-color: #0d2857; */
+  background: #403bb1;
+  margin-top: 100px;
 }
 
 .list-style {
   list-style-type: none !important;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 1rem;
   opacity: 0.8;
 }
 .copy-right {
-  font-size: 0.75rem;
+  font-size: 1rem;
   opacity: 0.8;
 }
 .Analyst {
@@ -18,4 +20,20 @@
   height: 23.7px;
   margin: 10.7px 0 5.2px 10.2px;
   color: #fff;
+}
+
+.quick-links {
+  text-align: center;
+}
+
+.footer-links {
+  background-color: #5a5ced;
+  margin: 5px;
+  border: none;
+}
+
+.phone {
+  background-color: #5a5ced;
+  margin: 5px;
+  border: none;
 }

@@ -101,26 +101,37 @@ const Register = () => {
           <input
             name="username"
             type="text"
-            placeholder="johndoe"
+            placeholder="Username"
             onChange={handleChange}
           />
           <label htmlFor="">Email</label>
           <input
             name="email"
             type="email"
-            placeholder="email"
+            placeholder="Email"
             onChange={handleChange}
           />
           <label htmlFor="">Password</label>
           <input name="password" type="password" onChange={handleChange} />
-          <label htmlFor="">Profile Picture</label>
+
+          {/* <label htmlFor="">Profile Picture</label>
           <input
             type="file"
             onChange={(event) => setImage(event.target.files[0])}
+          /> */}
+
+          <label className="imagesInput" htmlFor="profilePic">
+            Upload Profile Picture
+          </label>
+          <input
+            type="file"
+            id="profilePic"
+            onChange={(event) => setImage(event.target.files[0])}
           />
-          <button type="submit" disabled={loading}>
+
+          {/* <button type="submit" disabled={loading}>
             {loading ? "Loading..." : "Register"}
-          </button>
+          </button> */}
         </div>
         <div className="right">
           <p>
@@ -150,6 +161,10 @@ const Register = () => {
             rows="10"
             onChange={handleChange}
           ></textarea>
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Loading..." : "Register"}
+          </button>
         </div>
       </form>
     </div>

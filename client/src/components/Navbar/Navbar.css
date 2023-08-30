@@ -3,8 +3,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #1A1B1D;
-  color: #fff;
+  background-color: #010101;
+  color: #d3cbc5;
   transition: 0.5s all ease;
   position: sticky;
   top: 0;
@@ -25,7 +25,7 @@
   font-weight: bold;
 }
 .navbar .container .logo .dot {
-  color: var(--green-color);
+  color: var(--white-color);
 }
 .navbar .container .links {
   display: flex;
@@ -52,10 +52,10 @@
   position: relative;
 }
 .navbar .container .links .user img {
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
 }
 .navbar .container .links .user .options {
@@ -89,14 +89,14 @@
   border-color: var(--gray-color);
 }
 .navbar .container .links .join-active {
-  color: #1DBF73;
+  color: #1dbf73;
   font-weight: 600;
   font-size: 14px;
-  border: 1px solid #1DBF73;
+  border: 1px solid #1dbf73;
 }
 .navbar .container .links .join-active:hover {
-  background-color: #1DBF73;
-  border-color: #1DBF73;
+  background-color: #1dbf73;
+  border-color: #1dbf73;
   color: #fff;
 }
 .navbar hr {
@@ -111,4 +111,47 @@
   padding: 10px 0;
   cursor: pointer;
   text-align: center;
+}
+
+.navbar.active {
+  background-color: #fff;
+  color: #000;
+  position: sticky;
+}
+.navbar .container .links .join-active {
+  background: #544cf9;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid #1dbf73;
+  color: white;
+}
+.navbar.active {
+  background-color: #fff;
+  color: #000;
+  position: sticky;
+  z-index: 1;
+}
+.navbar > .container,
+.navbar > .container-fluid,
+.navbar > .container-sm,
+.navbar > .container-md,
+.navbar > .container-lg,
+.navbar > .container-xl,
+.navbar > .container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2vw;
+}
+.navbar .container .links button:hover {
+  background-color: var(--green-color);
+  border-color: var(--gray-color);
+  background: #403bb1;
+}
+.navbar .container .links .join-active:hover {
+  background-color: #1dbf73;
+  border-color: #1dbf73;
+  color: #fff;
+  background: #403bb1;
 }

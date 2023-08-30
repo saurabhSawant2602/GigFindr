@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { axiosFetch } from "../../../utils";
 import { useRecoilState } from "recoil";
 import { userState } from "../../../atoms";
@@ -42,9 +42,21 @@ const Login = () => {
 
     setLoading(true);
     try {
+      //check if user is verified
+      console.log(formInput.username);
+      const res = await axiosFetch.post("/auth/isVerified", {
+        username: formInput.username,
+      });
+      if (res.status === 401) {
+        toast.error(res.data.message);
+        return;
+      }
+
+      console.log(res);
       const { data } = await axiosFetch.post("/auth/login", formInput);
       localStorage.setItem("user", JSON.stringify(data.user));
       setUser(data.user);
+
       toast.success("Welcome back!", {
         duration: 3000,
         icon: "😃",
@@ -65,14 +77,14 @@ const Login = () => {
     <div className="login">
       <form action="" onSubmit={handleFormSubmit}>
         <h1>Sign in</h1>
-        <label htmlFor="">Username</label>
+        {/* <label htmlFor="">Username</label> */}
         <input
           name="username"
           placeholder="johndoe"
           onChange={handleFormInput}
         />
 
-        <label htmlFor="">Password</label>
+        {/* <label htmlFor="">Password</label> */}
         <input
           name="password"
           type="password"
@@ -83,6 +95,9 @@ const Login = () => {
           {loading ? "Loading" : "Login"}
         </button>
         <span>{error && error}</span>
+        <p>
+          Don't have an account? <Link to="/register">Register</Link>
+        </p>
       </form>
     </div>
   );

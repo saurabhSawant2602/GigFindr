@@ -98,7 +98,7 @@ const Add = () => {
             <input
               name="title"
               type="text"
-              placeholder="e.g. I will do something I'm really good at"
+              placeholder="Title"
               onChange={handleFormCange}
             />
 
@@ -112,17 +112,35 @@ const Add = () => {
               ))}
             </select>
 
+            <label htmlFor="">Description</label>
+            <textarea
+              name="description"
+              cols="30"
+              rows="16"
+              placeholder="Brief descriptions to introduce your service to customers"
+              onChange={handleFormCange}
+            ></textarea>
+
             <div className="images">
               <div className="imagesInputs">
-                <label htmlFor="">Cover Image</label>
+                <label className="imagesInput" htmlFor="cover1">
+                  <span class="material-icons">add_photo_alternate</span>
+                  Cover Image
+                </label>
                 <input
+                  id="cover1"
                   type="file"
                   accept="image/*"
                   onChange={(event) => setCoverImage(event.target.files[0])}
                 />
                 <br />
-                <label htmlFor="">Upload Images</label>
+
+                <label className="imagesInput" htmlFor="cover2">
+                  <span class="material-icons">add_photo_alternate</span>
+                  Upload Images
+                </label>
                 <input
+                  id="cover2"
                   type="file"
                   accept="image/*"
                   multiple
@@ -134,15 +152,7 @@ const Add = () => {
               </button>
             </div>
 
-            <label htmlFor="">Description</label>
-            <textarea
-              name="description"
-              cols="30"
-              rows="16"
-              placeholder="Brief descriptions to introduce your service to customers"
-              onChange={handleFormCange}
-            ></textarea>
-            <button onClick={handleFormSubmit}>Create</button>
+            {/* <button onClick={handleFormSubmit}>Create</button> */}
           </div>
 
           <div className="right">
@@ -171,13 +181,13 @@ const Add = () => {
               onChange={handleFormCange}
             />
 
-            <label htmlFor="">Revision Number</label>
+            {/* <label htmlFor="">Revision Number</label>
             <input
               type="number"
               name="revisionNumber"
               min="1"
               onChange={handleFormCange}
-            />
+            /> */}
 
             <label htmlFor="">Add Feature</label>
             <form className="add" onSubmit={handleFormFeature}>
@@ -209,6 +219,8 @@ const Add = () => {
               min="1"
               onChange={handleFormCange}
             />
+
+            <button onClick={handleFormSubmit}>Create</button>
           </div>
         </div>
       </div>
