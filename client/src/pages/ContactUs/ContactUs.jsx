@@ -8,11 +8,11 @@ import toast from "react-hot-toast";
 function ContactForm() {
   const [state, handleSubmit] = useForm("xrgwqkaj");
   const [showPopup, setShowPopup] = useState(false);
-
   console.log(state);
   const handleOnSubmit = async (e) => {
-    e.preventDefault();
+    console.log("hi");
 
+    e.preventDefault();
     if (validate()) {
       await handleSubmit(e);
       if (state.succeeded) {
@@ -21,34 +21,45 @@ function ContactForm() {
       }
     }
   };
+
   function validate() {
-    if (!state.values.name) {
+    const errors = {};
+    const input = document.getElementsByClassName("input-textarea");
+    const textarea = document.getElementsByTagName("textarea");
+
+    if (!input[0].value) {
       toast.error("Name is required");
-      return false;
+      return;
+    } else if (!/^[a-zA-Z\s]*$/.test(input[0].value)) {
+      toast.error("Name should only contain alphabetic characters and spaces");
+      return;
     }
 
-    if (!state.values?.email) {
+    if (!input[1].value) {
       toast.error("Email is required");
-      return false;
-    } else if (!/\S+@\S+\.\S+/.test(state.values.email)) {
+      return;
+    } else if (!/\S+@\S+\.\S+/.test(input[1].value)) {
       toast.error("Invalid email format");
-      return false;
+      return;
     }
 
-    if (!state.values.phone) {
+    if (!input[2].value) {
       toast.error("Phone number is required");
-      return false;
-    } else if (!/^\d{10}$/.test(state.values.phone)) {
+      return;
+    } else if (!/^\+91[0-9]{10}$/.test(input[2].value)) {
       toast.error("Invalid phone number format");
-      return false;
+      return;
     }
 
-    if (!state.values.message) {
+    if (!input[3].value) {
       toast.error("Message is required");
-      return false;
+      return;
+    } else if (input[3].value.length < 25) {
+      toast.error("Message Length should not be less than 25");
+      return;
     }
 
-    return true;
+    return errors; // Return the errors object
   }
 
   return (
@@ -76,6 +87,7 @@ function ContactForm() {
             id="email"
             type="email"
             name="email"
+            placeholder="email@email.com"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
           <label className="form-label" htmlFor="phone">
@@ -88,6 +100,7 @@ function ContactForm() {
             id="phone"
             type="tel"
             name="phone"
+            placeholder="+91 8928010092"
           />
           <ValidationError prefix="Phone" field="phone" errors={state.errors} />
           <label className="form-label" htmlFor="message">
@@ -95,7 +108,12 @@ function ContactForm() {
             Message
           </label>
 
-          <textarea className="input-textarea" id="message" name="message" />
+          <textarea
+            className="input-textarea"
+            id="message"
+            name="message"
+            placeholder="type a message"
+          />
           <ValidationError
             prefix="Message"
             field="message"

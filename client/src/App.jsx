@@ -33,6 +33,7 @@ const paths = [
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
   { path: "/verified/:token", element: <Verified /> },
+  { path: "/verified", element: <Verified /> },
   {
     path: "/orders",
     element: (

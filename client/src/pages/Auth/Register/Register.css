@@ -99,7 +99,6 @@
 .register form .left button:focus,
 .register form .left button:active,
 .register form .right button:hover,
-.register form .right button:focus,
 .register form .right button:active {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   transform: scale(1.1);

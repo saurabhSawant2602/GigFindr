@@ -59,7 +59,17 @@ const Register = () => {
       } else if (key === "phone" && formInput[key].length < 9) {
         toast.error("Enter valid phone number!");
         return;
+      } else if (key === "phone" && !/^\+91[0-9]{10}$/.test(formInput[key])) {
+        toast.error(
+          "Please enter a valid Indian mobile number (e.g., +919123456789 or 9123456789)."
+        );
+        return;
       }
+    }
+
+    if (!image) {
+      toast.error("Please upload a profile picture.");
+      return;
     }
 
     setLoading(true);
@@ -97,21 +107,27 @@ const Register = () => {
       <form onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
-          <label htmlFor="">Username</label>
+          <label htmlFor="">
+            Username <span style={{ color: "red" }}>*</span>
+          </label>
           <input
             name="username"
             type="text"
             placeholder="Username"
             onChange={handleChange}
           />
-          <label htmlFor="">Email</label>
+          <label htmlFor="">
+            Email <span style={{ color: "red" }}>*</span>
+          </label>
           <input
             name="email"
             type="email"
             placeholder="Email"
             onChange={handleChange}
           />
-          <label htmlFor="">Password</label>
+          <label htmlFor="">
+            Password <span style={{ color: "red" }}>*</span>
+          </label>
           <input name="password" type="password" onChange={handleChange} />
 
           {/* <label htmlFor="">Profile Picture</label>
@@ -121,10 +137,12 @@ const Register = () => {
           /> */}
 
           <label className="imagesInput" htmlFor="profilePic">
-            Upload Profile Picture
+            {image ? "Image Selected" : "Upload Profile Picture"}{" "}
+            <span style={{ color: "red" }}>*</span>
           </label>
           <input
             type="file"
+            accept="image/png, image/jpeg, image/jpg"
             id="profilePic"
             onChange={(event) => setImage(event.target.files[0])}
           />
@@ -145,14 +163,18 @@ const Register = () => {
               <span className="slider round"></span>
             </label>
           </div>
-          <label htmlFor="">Phone Number</label>
+          <label htmlFor="">
+            Phone Number <span style={{ color: "red" }}>*</span>
+          </label>
           <input
             name="phone"
             type="text"
-            placeholder="+1 1234 567 890"
+            placeholder="+91"
             onChange={handleChange}
           />
-          <label htmlFor="">Description</label>
+          <label htmlFor="">
+            Description <span style={{ color: "red" }}>*</span>
+          </label>
           <textarea
             placeholder="A short description of yourself"
             name="description"

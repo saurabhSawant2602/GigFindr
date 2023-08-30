@@ -1,21 +1,26 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-
+import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./Verified.css";
 function Verified() {
   const [loading, setLoading] = useState(false);
   const [verified, setVerified] = useState(false);
-  let { token } = useParams();
+  const [searchParams, setSearchParamas] = useSearchParams();
+  const navigate = useNavigate();
+
   const handleVerifyClick = async () => {
     setLoading(true);
-
+    const token = searchParams.get("token");
+    console.log(token);
     try {
       const response = await fetch(
-        `http://localhost:8080/api/auth/verifyemail/${token}`,
+        `http://localhost:8080/api/auth/verify/${token}`,
         { method: "GET" }
       );
 
       if (response.ok) {
         setVerified(true);
+        setTimeout(() => navigate("/"), 2000);
       } else {
         setVerified(false);
       }
@@ -29,7 +34,11 @@ function Verified() {
 
   return (
     <div className="container">
-      <button onClick={handleVerifyClick} disabled={loading || verified}>
+      <button
+        className="verify-btn"
+        onClick={handleVerifyClick}
+        disabled={loading || verified}
+      >
         Verify Email
       </button>
       {loading && <p className="loading">Verifying email...</p>}
