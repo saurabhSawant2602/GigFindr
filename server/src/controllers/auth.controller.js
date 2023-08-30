@@ -91,7 +91,7 @@ const authRegister = async (request, response) => {
                 Hi! There, You have recently visited
                 our website and entered your email.
                 Please follow the given link to verify your email
-                ${CLIENT_URL}/${token}
+                ${CLIENT_URL}?token=${token}
                 // http://localhost:8080/api/auth/verify/${token}
                 Thanks
             `,
@@ -124,17 +124,19 @@ const authRegister = async (request, response) => {
   }
 };
 
-const verify = (req, res) => {
+const verify = async (req, res) => {
   const { token } = req.params;
   console.log(token);
 
   // Verifying the JWT token
-  jwt.verify(token, `${JWT_SECRET}`, (err, decoded) => {
+  jwt.verify(token, `${JWT_SECRET}`, async (err, decoded) => {
     const { email, exp } = decoded.data;
     console.log(email);
     // console.log(email);
 
     try {
+      const user = await User.findOne({ email });
+
       User.findOneAndUpdate({ email }, { isVerified: true }).then(() =>
         res.json({ message: "Email verified successfully" })
       );
@@ -243,7 +245,6 @@ const authStatus = async (request, response) => {
 };
 
 const isVerified = async (req, res) => {
- 
   const { username } = req.body;
   try {
     const user = await User.findOne({ username });
