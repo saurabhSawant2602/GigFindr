@@ -64,6 +64,13 @@ const Register = () => {
           "Please enter a valid Indian mobile number (e.g., +919123456789 )."
         );
         return;
+      } else if (
+        !formInput["password"].match(
+          /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[a-z]).{6,18}$/
+        )
+      ) {
+        toast.error("Password must be 6 to 18 characters long and include at least one uppercase letter, one symbol (!@#$%^&*), one digit, and one lowercase letter: " );
+        return;
       }
     }
 

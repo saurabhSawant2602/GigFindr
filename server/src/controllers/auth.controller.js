@@ -92,7 +92,7 @@ const authRegister = async (request, response) => {
                 our website and entered your email.
                 Please follow the given link to verify your email
                 ${CLIENT_URL}?token=${token}
-                // http://localhost:8080/api/auth/verify/${token}
+              
                 Thanks
             `,
     };

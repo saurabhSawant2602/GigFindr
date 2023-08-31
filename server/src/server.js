@@ -41,10 +41,6 @@ app.use("/api/orders", orderRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/reviews", reviewRoute);
 
-// Routes
-app.get("/", (request, response) => {
-  response.send("Hello, Topper!");
-});
 
 app.get("/ip", (request, response) => {
   const list =

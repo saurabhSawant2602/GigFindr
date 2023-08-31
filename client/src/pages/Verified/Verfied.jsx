@@ -7,7 +7,7 @@ function Verified() {
   const [verified, setVerified] = useState(false);
   const [searchParams, setSearchParamas] = useSearchParams();
   const navigate = useNavigate();
-
+  // ?token=jreicjerkjcrejcjrek
   const handleVerifyClick = async () => {
     setLoading(true);
     const token = searchParams.get("token");

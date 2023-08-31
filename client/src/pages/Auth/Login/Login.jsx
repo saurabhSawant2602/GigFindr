@@ -39,7 +39,7 @@ const Login = () => {
         return;
       }
     }
-
+    
     setLoading(true);
     try {
       //check if user is verified
