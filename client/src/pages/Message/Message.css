@@ -46,7 +46,7 @@
   height: 40px;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .message .container .messages .item p {
   padding: 20px;
@@ -106,4 +106,4 @@
   .message .container {
     width: 90%;
   }
-}/*# sourceMappingURL=Message.css.map */
+}

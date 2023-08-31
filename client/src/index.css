@@ -35,3 +35,44 @@ button {
 button:hover {
   background: transparent;
 }
+.gigs .container .menu .left button {
+  background-color: #1d76bf;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.gig .container .right button,
+.gig .container .right-mobile button {
+  background-color: #1d76bf;
+}
+.gig .container .right button,
+.gig .container .right-mobile button {
+  background-color: #403bb1;
+}
+.payment-form button {
+  background-color: #403bb1;
+}
+.message .container .write button {
+  background-color: var(--green-color);
+  padding: 20px;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100px;
+  background: #403bb1;
+}
+.reviews .add .addForm button {
+  align-self: flex-end;
+  width: 100px;
+  border: none;
+  padding: 10px;
+  color: #fff;
+
+  cursor: pointer;
+  background-color: #403bb1;
+}

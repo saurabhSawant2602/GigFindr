@@ -61,7 +61,7 @@ const Register = () => {
         return;
       } else if (key === "phone" && !/^\+91[0-9]{10}$/.test(formInput[key])) {
         toast.error(
-          "Please enter a valid Indian mobile number (e.g., +919123456789 or 9123456789)."
+          "Please enter a valid Indian mobile number (e.g., +919123456789 )."
         );
         return;
       }

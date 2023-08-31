@@ -181,13 +181,13 @@ const Add = () => {
               onChange={handleFormCange}
             />
 
-            {/* <label htmlFor="">Revision Number</label>
+            <label htmlFor="">Revision Number</label>
             <input
               type="number"
               name="revisionNumber"
               min="1"
               onChange={handleFormCange}
-            /> */}
+            />
 
             <label htmlFor="">Add Feature</label>
             <form className="add" onSubmit={handleFormFeature}>

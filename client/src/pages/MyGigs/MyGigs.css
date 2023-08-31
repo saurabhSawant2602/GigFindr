@@ -19,7 +19,6 @@
   justify-content: space-between;
 }
 .myGigs .container .title button {
-  background-color: var(--green-color);
   color: #fff;
   font-weight: 500;
   border: none;
@@ -40,7 +39,7 @@
   width: 50px;
   height: 25px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .myGigs .container table tr .delete {
   width: 20px;
@@ -53,4 +52,4 @@
   .myGigs .container {
     width: 90%;
   }
-}/*# sourceMappingURL=MyGigs.css.map */
+}
